@@ -1,0 +1,22 @@
+p
+	form_for #
+	= @user.id
+p
+	form_for first name&#58;
+	= @user.first_name
+p
+	form_for last name&#58;
+	= @user.last_name
+p
+	form_for title&#58;
+	= @user.title
+p
+	form_for desc&#58;
+	= @user.desc
+p
+	= link_to "edit", edit_user_path(@user.id), class: "btn"
+	= link_to "del", user_path(@user.id), class: "btn", method: :delete
+	= link_to "back", users_path, class: "btn"
+
+
+	= link_to "category", "#", class: "btn"
