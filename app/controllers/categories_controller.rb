@@ -1,22 +1,23 @@
 class CategoriesController < ApplicationController
 	
 	before_filter :find_category, only: [:update, :destroy, :edit, :show]
-	
-	def index
-		@categories = Category.all
-	end
-	
-	def show
-		
-	end
-	
-	def new
-  	@category = Category.new
-  	render :new
+  
+  def index
+    @categories = current_user.categories
+  end
+  
+  def show
+    
+  end
+  
+  def new
+    @category = Category.new
+    render :new
   end
 
   def create
   	@category = Category.new(params[:category])
+    @category.user_id = current_user.id
   	if @category.save 
   		redirect_to categories_path
   	else 

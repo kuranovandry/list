@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 	before_filter :find_user, only: [:update, :destroy, :edit, :show]
+  skip_before_filter :login?, only: [:new, :create]
 
 	def index
   	@users = User.all
@@ -7,13 +8,12 @@ class UsersController < ApplicationController
 
   def new
   	@user = User.new
-  	render :new
   end
 
   def create
   	@user = User.new(params[:user])
   	if @user.save 
-  		redirect_to users_path
+  		redirect_to new_login_path
   	else 
   		render :new
   	end

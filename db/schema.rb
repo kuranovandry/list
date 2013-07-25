@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130725070708) do
+ActiveRecord::Schema.define(:version => 20130725105118) do
 
   create_table "categories", :force => true do |t|
     t.integer  "user_id"
@@ -27,6 +27,8 @@ ActiveRecord::Schema.define(:version => 20130725070708) do
     t.text     "desc"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "email"
+    t.string   "password"
   end
 
 end

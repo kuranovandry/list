@@ -1,0 +1,10 @@
+= form_tag login_index_path do
+	p
+		= label_tag :email, "email:"
+		= text_field_tag :email
+	p
+		= label_tag :password, "password:"
+		= password_field_tag :password
+	p
+		= submit_tag "login"
+		= link_to "new", new_user_path, class: "btn"
