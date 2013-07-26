@@ -1,24 +1,30 @@
 class TasksController < ApplicationController
 	before_filter :find_task, only: [:update, :destroy, :edit, :show]
-	def index
-		
+	
+  def index
+		@tasks = current_user.tasks
 	end
-	def show
+	
+  def show
     
   end
+  
   def new
+    @categories = current_user.categories
     @task = Task.new
-    render :new
   end
+  
   def create
-  	@task = Task.new(params[:task])
-    @task.category_id = current_user.category_id
+    @task = Task.new(params[:task])
+
+    @task.user_id = current_user.id
   	if @task.save 
-  		redirect_to task_index_path
+  		redirect_to tasks_path
   	else 
   		render :new
   	end
   end
+  
   def update
   	if @task.update_attributes(params[:task])
   		redirect_to task_path
@@ -33,7 +39,7 @@ class TasksController < ApplicationController
 
   def destroy
   	@task.destroy
-  	redirect_to task_index_path
+  	redirect_to tasks_path
   end
 
 	private

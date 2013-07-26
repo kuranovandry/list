@@ -7,12 +7,13 @@ class CategoriesController < ApplicationController
   end
   
   def show
-    
+    #binding.pry
+    @tasks = @category.tasks
+
   end
   
   def new
     @category = Category.new
-    render :new
   end
 
   def create

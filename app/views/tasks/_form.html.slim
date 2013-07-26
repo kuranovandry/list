@@ -1,4 +1,6 @@
 = form_for @task do |f|
+	p
+		= f.select :category_id, @categories.collect { |p| [p.name, p.id] }, { prompt: "select category" }
 	p	
 		= f.label :film_name
 		= f.text_field :film_name

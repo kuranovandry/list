@@ -1,16 +1,19 @@
 p
-	form_for #
-	= @atsk.id
+	| #
+	= @task.id
 p
-	form_for category id&#58;
-	= @atsk.category_id
+	| user id:
+	= @task.user_id
 p
-	form_for film name&#58;
-	= @atsk.follm_name
+	| category id:
+	= @task.category_id
 p
-	form_for film duration&#58;
-	= @atsk.follm_duration
+	| film name:
+	= @task.film_name
+p
+	| film duration:
+	= @task.film_duration
 p 
-	= link_to "edit", edit_task_path(@atsk.id), class: "btn"
-	= link_to "del", task_path(@atsk.id), class: "btn", method: :delete
-	= link_to "task", task_index_path, class: "btn"
+	= link_to "edit", edit_task_path(@task.id), class: "btn"
+	= link_to "del", task_path(@task.id), class: "btn", method: :delete
+	= link_to "task", tasks_path, class: "btn"

@@ -1,15 +1,11 @@
 table 
 	thead
 		tr
-			th id
-			th user_id
-			th name
+			th Category
 			th action
 	tbody
 	  - @categories.each do |category|
 	  	tr 
-	  		td = category.id
-	  		td = category.user_id
 	  		td = link_to category.name, category_path(category.id)
 	  		td 
 	  			= link_to "edit", edit_category_path(category.id), class: "btn" 
@@ -18,4 +14,4 @@ div class="link"
 	= link_to "new", new_category_path, class: "btn"
 	= link_to "edit user", edit_user_path(@user.id), class: "btn" 
 	= link_to @user.first_name, user_path(@user.id), class: "btn" 
-	= link_to "task", task_index_path, class: "btn"
+	= link_to "task", tasks_path, class: "btn"
