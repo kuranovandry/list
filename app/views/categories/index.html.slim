@@ -14,7 +14,8 @@ table
 	  		td 
 	  			= link_to "edit", edit_category_path(category.id), class: "btn" 
 	  			= link_to "del", category_path(category.id), class: "btn", method: :delete
-
-= link_to "new", new_category_path, class: "btn"
-= link_to "edit user", edit_user_path(@user.id), class: "btn" 
-= link_to @user.first_name, user_path(@user.id), class: "btn" 
+div class="link"
+	= link_to "new", new_category_path, class: "btn"
+	= link_to "edit user", edit_user_path(@user.id), class: "btn" 
+	= link_to @user.first_name, user_path(@user.id), class: "btn" 
+	= link_to "task", task_index_path, class: "btn"

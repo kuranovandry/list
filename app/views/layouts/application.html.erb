@@ -11,9 +11,7 @@
 	<%= link_to 'Log out', login_path(current_user.id), method: :delete if current_user %>
 </div>
 
-<div class="logdiv">
-	<%= yield %>
-</div>
+<%= yield %>
 
 </body>
 </html>

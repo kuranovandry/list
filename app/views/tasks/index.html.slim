@@ -1,0 +1,20 @@
+table 
+	thead
+		tr
+			th id
+			th categories_id
+			th film_name
+			th film_duration
+			th action
+	tbody
+	  - @tasks.each do |task|
+	  	tr 
+	  		td = task.id
+	  		td = task.category_id
+	  		td = link_to task.film_name, task_path(task.id)
+	  		td = task.film_duration
+	  		td 
+	  			= link_to "edit", edit_task_path(task.id), class: "btn" 
+	  			= link_to "del", task_path(task.id), class: "btn", method: :delete
+div class="link"
+	= link_to "new", new_task_path, class: "btn"

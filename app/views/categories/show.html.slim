@@ -7,7 +7,7 @@ p
 p
 	form_for name&#58;
 	= @category.name
-p
+p 
 	= link_to "edit", edit_category_path(@category.id), class: "btn"
 	= link_to "del", category_path(@category.id), class: "btn", method: :delete
 	= link_to "back", categories_path, class: "btn"
