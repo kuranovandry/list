@@ -1,21 +1,21 @@
 = form_for user do |f|
-	p
+	div class	= "field"
 		= f.label :email
 		= f.email_field :email
-	p
+	div class	= "field"
 		= f.label :password
 		= f.password_field :password
-	p
+	div class	= "field"
 		= f.label :first_name
 		= f.text_field :first_name
-	p	
+	div class	= "field"
 		= f.label :last_name
 		= f.text_field :last_name
-	p
+	div class	= "field"
 		= f.label :title
 		= f.text_field :title
-	p
+	div class	= "field"
 		= f.label :description
 		= f.text_area :desc
-	p
-		= f.submit
+	div class	= "link"
+		= f.submit class: "btn"

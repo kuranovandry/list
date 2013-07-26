@@ -1,11 +1,11 @@
 h1 wiew info about task 
-p
+div class="field2"
 	| film name:
 	= @task.film_name
-p
+div class="field2"
 	| film duration:
 	= @task.film_duration
-p 
+div class="link"
 	= link_to "edit", edit_task_path(@task.id), class: "btn"
 	= link_to "del", task_path(@task.id), class: "btn", method: :delete
 	= link_to "task", tasks_path, class: "btn"

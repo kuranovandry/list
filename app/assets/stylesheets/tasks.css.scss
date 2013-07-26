@@ -1,3 +1,17 @@
-// Place all the styles related to the tasks controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.field {clear:both; text-align: right; line-height:35px;}
+label {float:left; padding-right:35px;}
+.new_task{
+	float:left;
+	margin: 0 25% 0 25%;
+	width: 50%;
+}
+.edit_task{
+	float:left;
+	margin: 0 25% 0 25%;
+	width: 50%;
+}
+select{
+	width: 220px;
+	background-color: #ffffff;
+	border: 1px solid #cccccc;
+}

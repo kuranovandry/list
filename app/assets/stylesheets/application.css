@@ -11,6 +11,9 @@
  *= require_self
  *= require_tree .
  */
+ body{
+ 	background-color: #e4f5fc;	
+ }
 .btn {
 	display: inline-block;
 	padding: 4px 12px;
@@ -34,4 +37,15 @@
 }
 a {
 	text-decoration: none;
+}
+.logout{
+	margin:0 0% 0 92%;
+  width:8%;
+}
+h1{
+	text-align: center;
+}
+.link{
+	margin:5% 10% 0 65%;
+  width:25%;
 }

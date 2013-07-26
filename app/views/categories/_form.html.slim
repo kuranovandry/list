@@ -1,6 +1,6 @@
 = form_for @category do |f|
-	p	
+	div class	= "field"
 		= f.label :name
 		= f.text_field :name
-	p
-		= f.submit
+	div class	= "link"
+		= f.submit class: "btn"

@@ -1,11 +1,25 @@
-table, td, th {
-	border: 1px solid black;
-	width: 900px;
+td, th {
+	border-bottom: 1px solid grey;
 	text-align: center;
-	height: 25px;
-	margin-left: 15%;
-	margin: o;
 }
 th {
 	background-color: #cccccc;
+}
+td{
+	text-align: left; 
+}
+table{
+	border: 0px solid black;
+	margin: 0 10% 0 10%;
+	height: 25px;
+	width: 80%;
+}
+
+.field {clear:both; text-align: right; line-height:35px;}
+.field2 {clear:both; text-align: center; line-height:35px;}
+label {float:left; padding-right:10px;}
+.edit_user {
+	float:left;
+	margin: 0 25% 0 25%;
+	width: 50%;
 }

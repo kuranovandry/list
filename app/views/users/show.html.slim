@@ -1,11 +1,11 @@
 h1 wiew info about #{ @user.full_name }
-p
+div class	= "field2"
 	| title:
 	= @user.title
-p
+div class	= "field2"
 	| desc:
 	= @user.desc
-p
+div class="link"
 	= link_to "edit", edit_user_path(@user.id), class: "btn"
 	= link_to "del", user_path(@user.id), class: "btn", method: :delete
 	= link_to "categories", categories_path, class: "btn"

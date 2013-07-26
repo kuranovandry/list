@@ -1,11 +1,11 @@
 = form_for @task do |f|
-	p
+	div
 		= f.select :category_id, @categories.collect { |p| [p.name, p.id] }, { prompt: "select category" }
-	p	
+	div class="field"
 		= f.label :film_name
 		= f.text_field :film_name
-	p	
+	div class="field"
 		= f.label :film_duration
 		= f.text_field :film_duration
-	p
-		= f.submit
+	div class="link"
+		= f.submit class: "btn"

@@ -1,13 +1,13 @@
-table, td, th {
-	border: 1px solid black;
-	width: 900px;
-	text-align: center;
-	height: 25px;
-	margin-left: 15%;
+.field {clear:both; text-align: right; line-height:35px;}
+.field2 {clear:both; text-align: center; line-height:35px;}
+label {float:left; padding-right:10px;}
+.edit_category{
+	float:left;
+	margin: 0 25% 0 25%;
+	width: 50%;
 }
-th {
-	background-color: #cccccc;
-}
-.link{
-	margin-left: 5%;
+.new_category{
+	float:left;
+	margin: 0 25% 0 25%;
+	width: 50%;
 }
