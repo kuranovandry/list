@@ -8,6 +8,7 @@ gem 'rails', '3.2.13'
 gem 'mysql2'
 gem 'pry'
 gem 'slim'
+gem 'bootstrap'
 
 gem 'json'
 
