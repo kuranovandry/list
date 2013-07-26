@@ -1,18 +1,4 @@
-p
-	form_for #
-	= @category.id
-p
-	form_for user id&#58;
-	= @category.user_id
-p
-	form_for name&#58;
-	= @category.name
-p 
-	= link_to "edit", edit_category_path(@category.id), class: "btn"
-	= link_to "del", category_path(@category.id), class: "btn", method: :delete
-	= link_to "back", categories_path, class: "btn"
-
-
+h1 wiew all task for #{@category.name}
 table 
 	thead
 		tr
@@ -23,3 +9,7 @@ table
 	  	tr 
 	  		td = task.film_name
 	  		td = task.film_duration
+p 
+	= link_to "edit", edit_category_path(@category.id), class: "btn"
+	= link_to "del", category_path(@category.id), class: "btn", method: :delete
+	= link_to "back", categories_path, class: "btn"

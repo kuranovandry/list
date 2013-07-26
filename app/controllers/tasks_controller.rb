@@ -16,7 +16,6 @@ class TasksController < ApplicationController
   
   def create
     @task = Task.new(params[:task])
-
     @task.user_id = current_user.id
   	if @task.save 
   		redirect_to tasks_path
@@ -27,14 +26,15 @@ class TasksController < ApplicationController
   
   def update
   	if @task.update_attributes(params[:task])
-  		redirect_to task_path
+  		redirect_to tasks_path
   	else
   		render :edit
   	end
   end
 
   def edit
-  	
+  	@categories = current_user.categories
+    
   end
 
   def destroy

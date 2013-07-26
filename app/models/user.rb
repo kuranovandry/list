@@ -3,4 +3,9 @@ class User < ActiveRecord::Base
 
   has_many :categories
   has_many :tasks
+
+  def full_name
+  	"#{first_name} #{last_name}"
+  	# [first_name, last_name].join(" ")
+  end
 end

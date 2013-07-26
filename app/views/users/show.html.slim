@@ -1,17 +1,9 @@
+h1 wiew info about #{ @user.full_name }
 p
-	form_for #
-	= @user.id
-p
-	form_for first name&#58;
-	= @user.first_name
-p
-	form_for last name&#58;
-	= @user.last_name
-p
-	form_for title&#58;
+	| title:
 	= @user.title
 p
-	form_for desc&#58;
+	| desc:
 	= @user.desc
 p
 	= link_to "edit", edit_user_path(@user.id), class: "btn"
