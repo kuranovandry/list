@@ -1,12 +1,12 @@
 = form_for @task do |f|
- - if @task.errors.any?
-   #error_explanation
-    h2
-        = pluralize(@task.errors.count, "error")
-        |  prohibited this post from being saved:
-    ul
-        = @task.errors.full_messages.each do |msg|
-           li = msg
+	- if @task.errors.any?
+		#error_explanation
+		h2
+			= pluralize(@task.errors.count, "error")
+			| prohibited this post from being saved:
+		ul
+			= @task.errors.full_messages.each do |msg|
+				li = msg
 
 	div
 		= f.select :category_id, @categories.collect { |p| [p.name, p.id] }, { prompt: "select category" }
