@@ -4,6 +4,8 @@ class Category < ActiveRecord::Base
   belongs_to :user
   has_many :tasks
 
+  field :name, type: String
+
   validates :name, length: { in: 3..20 }
 
   validates :name, presence: true
@@ -11,4 +13,6 @@ class Category < ActiveRecord::Base
   validates :name, uniqueness: true
 
   validates :name, uniqueness: { case_sensitive: false }
+
+  validates_presence_of :name
 end
