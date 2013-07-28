@@ -3,4 +3,12 @@ class Category < ActiveRecord::Base
   
   belongs_to :user
   has_many :tasks
+
+  validates :name, length: { in: 3..20 }
+
+  validates :name, presence: true
+
+  validates :name, uniqueness: true
+
+  validates :name, uniqueness: { case_sensitive: false }
 end
