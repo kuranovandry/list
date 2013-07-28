@@ -4,10 +4,7 @@ class User < ActiveRecord::Base
   has_many :categories
   has_many :tasks
 
-  field :email, type: String
-  field :first_name, type: String
-  field :last_name, type: String
-  field :title, type: String
+
 
   validates :first_name, length: { minimum: 2, too_short: "%{count} characters is the minimum allowed" }
   validates :last_name, length: { minimum: 2, too_short: "%{count} characters is the minimum allowed" }
@@ -22,7 +19,7 @@ class User < ActiveRecord::Base
   validates :first_name, :last_name, :email, uniqueness: { case_sensitive: false }
   validates :password, uniqueness: { case_sensitive: true }
 
-  validates_presence_of :email, :password, :first_name, :last_name
+
   
   def full_name
   	"#{first_name} #{last_name}"

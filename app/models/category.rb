@@ -4,7 +4,6 @@ class Category < ActiveRecord::Base
   belongs_to :user
   has_many :tasks
 
-  field :name, type: String
 
   validates :name, length: { in: 3..20 }
 

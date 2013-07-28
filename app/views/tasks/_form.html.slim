@@ -1,5 +1,5 @@
-= form_for @task do |f|
-	div
+= form_for(@task) do |f|
+ 	div
 		= f.select :category_id, @categories.collect { |p| [p.name, p.id] }, { prompt: "select category" }
 	div class="field"
 		= f.label :film_name
