@@ -8,9 +8,7 @@ class CategoriesController < ApplicationController
   end
   
   def show
-    #binding.pry
     @tasks = @category.tasks
-
   end
   
   def new
@@ -18,13 +16,16 @@ class CategoriesController < ApplicationController
   end
 
   def create
-    @category = Category.new(params[:category])
-    @category.user_id = current_user.id
-  	if @category.save 
-  		redirect_to categories_path
-  	else 
-  		render :new
-  	end
+    respond_to do |format|
+      @category = Category.new(params[:category])
+      @category.user_id = current_user.id
+    	if @category.save 
+        format.js
+        format.html { redirect_to categories_path }
+    	else 
+    		render :new
+    	end
+    end 
   end
 
   def update
@@ -36,7 +37,6 @@ class CategoriesController < ApplicationController
   end
 
   def edit
-  	
   end
 
   def destroy
