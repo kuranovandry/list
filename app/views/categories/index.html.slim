@@ -1,4 +1,5 @@
 h1 wiew all categories for user #{ @user.first_name }
+
 table 
 	thead
 		tr
@@ -6,13 +7,15 @@ table
 			th action
 	tbody
 	  - @categories.each do |category|
-	  	tr 
+	  	tr id="category_#{category.id}"
 	  		td = link_to category.name, category_path(category.id)
 	  		td 
 	  			= link_to "edit", edit_category_path(category.id), class: "btn" 
-	  			= link_to "del", category_path(category.id), class: "btn", method: :delete
+	  			= link_to "del", category_path(category.id), class: "btn", method: :delete, remote: true
 div class="link"
 	= link_to "new", new_category_path, class: "btn"
 	= link_to "edit user", edit_user_path(@user.id), class: "btn" 
 	= link_to @user.first_name, user_path(@user.id), class: "btn" 
 	= link_to "task", tasks_path, class: "btn"
+
+= render partial: "new"

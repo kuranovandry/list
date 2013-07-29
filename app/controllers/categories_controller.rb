@@ -4,6 +4,7 @@ class CategoriesController < ApplicationController
   
   def index
     @categories = current_user.categories
+    @category = Category.new
   end
   
   def show
@@ -17,7 +18,7 @@ class CategoriesController < ApplicationController
   end
 
   def create
-  	@category = Category.new(params[:category])
+    @category = Category.new(params[:category])
     @category.user_id = current_user.id
   	if @category.save 
   		redirect_to categories_path
@@ -39,8 +40,7 @@ class CategoriesController < ApplicationController
   end
 
   def destroy
-  	@category.destroy
-  	redirect_to categories_path
+    @category.destroy
   end
 
 	private
