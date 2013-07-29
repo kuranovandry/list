@@ -20,6 +20,7 @@ class TasksController < ApplicationController
   	if @task.save 
   		redirect_to tasks_path
   	else 
+      @categories = current_user.categories
   		render :new
   	end
   end
@@ -28,6 +29,7 @@ class TasksController < ApplicationController
   	if @task.update_attributes(params[:task])
   		redirect_to tasks_path
   	else
+      @categories = current_user.categories
   		render :edit
   	end
   end

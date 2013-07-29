@@ -1,13 +1,11 @@
 table 
 	thead
 		tr
-			th id
-			th first name
+			th user
 			th action
 	tbody
 	  - @users.each do |user|
-	  	tr 
-	  		td = user.id
+	  	tr
 	  		td = link_to user.first_name, user_path(user.id)
 	  		td 
 	  			= link_to "edit", edit_user_path(user.id), class: "btn" 

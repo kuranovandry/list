@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
   validates :desc, length: { maximum: 350, too_long: "%{count} characters is the maximum allowed" }
   validates :password, length: { in: 3..20 }
    
-  validates :first_name, :last_name, :login, :email, presence: true
+  validates :first_name, :last_name, :email, presence: true
    
   validates :email, :first_name, :last_name, uniqueness: true
 

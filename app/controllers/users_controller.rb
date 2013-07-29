@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 	before_filter :find_user, only: [:update, :destroy, :edit, :show]
-  skip_before_filter :login?, only: [:new, :create]
+  skip_before_filter :login?, only: [:new, :create, :update]
 
 	def index
   	@users = User.all
