@@ -15,3 +15,9 @@ div class="link"
 	= link_to "task", tasks_path, class: "btn"
 
 = render partial: "form_js", locals: { category: @category }
+
+
+javascript:
+	$(function(){
+		$("#sortable").sortable();
+	});
