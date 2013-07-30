@@ -5,7 +5,7 @@ table
 			th film_name
 			th film_duration
 			th action
-	tbody
+	tbody#sortable
 	  - @tasks.each do |task|
 	  	tr 
 	  		td = link_to task.film_name, task_path(task.id)
@@ -17,3 +17,8 @@ div class="link"
 	= link_to "new", new_task_path, class: "btn"
 	= link_to @user.first_name, user_path(@user.id), class: "btn" 
 	= link_to "category", categories_path, class: "btn" 
+
+javascript:
+	$(function(){
+		$("#sortable").sortable();
+	});

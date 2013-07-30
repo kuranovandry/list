@@ -30,7 +30,7 @@ class CategoriesController < ApplicationController
 
   def update
   	if @category.update_attributes(params[:category])
-  		redirect_to categories_path
+  		redirect_to categories_path 
   	else
   		render :edit
   	end

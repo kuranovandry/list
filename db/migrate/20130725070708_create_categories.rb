@@ -3,7 +3,7 @@ class CreateCategories < ActiveRecord::Migration
     create_table :categories do |t|
       t.integer :user_id
       t.string :name
-
+      
       t.timestamps
     end
   end
