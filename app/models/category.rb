@@ -1,9 +1,10 @@
 class Category < ActiveRecord::Base
-  attr_accessible :name, :user_id
+  attr_accessible :name, :user_id, :categories_order
   
   belongs_to :user
   has_many :tasks
 
+  serialize :categories_order, Array
 
   validates :name, length: { in: 3..20 }
 

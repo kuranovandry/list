@@ -21,7 +21,6 @@ javascript:
 		$("#sortable").sortable({
 			update: function(event, ui) {
 				var str=$(this).sortable('serialize');
-				
 				console.log(str);
 				$.ajax({
 					url: "#{categories_orders_path}",
