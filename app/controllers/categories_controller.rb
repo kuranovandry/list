@@ -3,7 +3,10 @@ class CategoriesController < ApplicationController
 	before_filter :find_category, only: [:update, :destroy, :edit, :show]
   
   def index
-    @categories = current_user.categories
+    @categories = []
+    current_user.categories_order.each do |id|
+      @categories << current_user.categories.find(id)
+    end
     @category = Category.new
   end
   

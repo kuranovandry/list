@@ -4,7 +4,7 @@ class Category < ActiveRecord::Base
   belongs_to :user
   has_many :tasks
 
-  serialize :categories_order, Array
+  serialize :categories_order
 
   validates :name, length: { in: 3..20 }
 
