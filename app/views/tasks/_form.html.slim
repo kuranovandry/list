@@ -8,11 +8,12 @@
 			= @task.errors.full_messages.each do |msg|
 				li = msg
 
-	div
-		= f.select :category_id, @categories.collect { |p| [p.name, p.id] }, { prompt: "select category" }
+	div class="field"
+		= f.label :category_name
+		= text_field_with_auto_complete :task, :category_name, { size: 15 }, { url: categories_path(:js), method: :get, width: "'search=' + element.value" }
 	div class="field"
 		= f.label :film_name
-		= f.text_field :film_name
+		= f.text_field :film_name 
 	div class="field"
 		= f.label :film_duration
 		= f.text_field :film_duration
