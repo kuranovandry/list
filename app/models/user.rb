@@ -1,10 +1,10 @@
 class User < ActiveRecord::Base
-  attr_accessible :desc, :first_name, :last_name, :title, :email, :password
+  attr_accessible :desc, :first_name, :last_name, :title, :email, :password, :categories_order
 
   has_many :categories
   has_many :tasks
 
-
+  serialize :categories_order
 
   validates :first_name, length: { minimum: 2, too_short: "%{count} characters is the minimum allowed" }
   validates :last_name, length: { minimum: 2, too_short: "%{count} characters is the minimum allowed" }

@@ -6,7 +6,6 @@ table#categories
 			th Category
 			th action
 	tbody#sortable
-	  / - @categories.each do |category|
 	  = render partial: "tr", collection: @categories, as: :category
 div class="link"
 	= link_to "new", new_category_path, class: "btn"
@@ -19,5 +18,14 @@ div class="link"
 
 javascript:
 	$(function(){
-		$("#sortable").sortable();
+		$("#sortable").sortable({
+			update: function(event, ui) {
+				var str=$(this).sortable('serialize');
+				console.log(str);
+				$.ajax({
+					url: "#{categories_orders_path}",
+					data: str 
+				});
+			}
+		})
 	});
