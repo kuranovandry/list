@@ -5,4 +5,5 @@ List::Application.routes.draw do
   resources :categories
   resources :categories_orders
   root to: "categories#index"
+
 end

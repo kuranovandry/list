@@ -27,8 +27,8 @@ end
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem "rails3-jquery-autocomplete"
-gem "autocomplete", "~> 1.0.1"
 gem "jquery_autocomplete", "~> 0.3.1"
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

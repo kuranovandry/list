@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
 	before_filter :find_task, only: [:update, :destroy, :edit, :show]
-  	
+  
   def index
 		@tasks = current_user.tasks
 	end
@@ -36,7 +36,6 @@ class TasksController < ApplicationController
 
   def edit
   	@categories = current_user.categories
-    
   end
 
   def destroy

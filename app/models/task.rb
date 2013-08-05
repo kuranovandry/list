@@ -1,9 +1,8 @@
 class Task < ActiveRecord::Base
-  attr_accessible :category_id, :film_duration, :film_name, :user_id
+  attr_accessible :category_id, :film_duration, :film_name, :user_id, :category_name
   belongs_to :category
   belongs_to :user
- 
-
+  
   def category_name
   	category.name if category
   end
