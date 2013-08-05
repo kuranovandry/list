@@ -46,6 +46,11 @@ class CategoriesController < ApplicationController
     @category.destroy
   end
 
+  def autocomplete_categories
+    @categories = Category.order(:name).where("name like ?", "%#{params[:term]}%")
+    render json: @categories.map(&:name)    
+  end
+
 	private
 	  def find_category
 	  	@category = Category.find_by_id(params[:id])

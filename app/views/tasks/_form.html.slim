@@ -10,7 +10,7 @@
 
 	div class="field"
 		= f.label :category_name
-		= text_field_with_auto_complete :task, :category_name, { size: 15 }, { url: categories_path(:js), method: :get }
+		= f.text_field :category_name, data: {autocomplete_source: autocomplete_categories_categories_path}
 	div class="field"
 		= f.label :film_name
 		= f.text_field :film_name 

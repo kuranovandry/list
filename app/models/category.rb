@@ -5,7 +5,7 @@ class Category < ActiveRecord::Base
   has_many :tasks
 
   serialize :categories_order
-
+  
   validates :name, length: { in: 3..20 }
 
   validates :name, presence: true

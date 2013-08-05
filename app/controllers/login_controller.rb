@@ -3,6 +3,7 @@ class LoginController < ApplicationController
 	skip_before_filter :login?
 
   def new
+    session[:user_id] = nil
   end
 
   def create

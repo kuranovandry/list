@@ -8,7 +8,6 @@ gem 'rails', '3.2.13'
 gem 'mysql2'
 gem 'pry'
 gem 'slim'
-gem 'bootstrap'
 
 gem 'json'
 
@@ -25,9 +24,6 @@ group :assets do
 end
 
 gem 'jquery-rails'
-gem 'jquery-ui-rails'
-gem "rails3-jquery-autocomplete"
-gem "jquery_autocomplete", "~> 0.3.1"
 
 
 # To use ActiveModel has_secure_password

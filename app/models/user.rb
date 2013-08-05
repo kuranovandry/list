@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
   validates :email, :first_name, :last_name, uniqueness: true
 
   validates :first_name, :last_name, :email, uniqueness: { case_sensitive: false }
-  validates :password, uniqueness: { case_sensitive: true }
+  
 
 
   
