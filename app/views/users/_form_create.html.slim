@@ -1,0 +1,21 @@
+tr id="user_#{user.id}"
+	= form_for user, remote: true, id: "update_user" do |f|
+		td = f.text_field :email
+		td = f.text_field :first_name
+		td = f.text_field :last_name
+		td = f.text_field :title
+		td = link_to "Ok", "javascript:void(0);", onclick: "$('#update_user').submit();", class: "btn"
+
+javascript:
+	$(function(){
+		$('#update_user').on('click', function(){
+			$.ajax({
+				url: '/users',
+				method: 'post',
+				data: "user{user_email:" + $('#user_email').val() + 
+							", user{user_first_name:" + $('#user_first_name').val() + 
+							", user{user_last_name:" + $('#user_last_name').val() + 
+							", user{user_title:" + $('#user_title').val() 
+			});
+		});
+	});

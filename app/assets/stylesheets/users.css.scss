@@ -4,6 +4,7 @@ td, th {
 }
 th {
 	background-color: #cccccc;
+	width:200px;
 }
 td{
 	text-align: left; 
@@ -22,4 +23,16 @@ label {float:left; padding-right:10px;}
 	float:left;
 	margin: 0 25% 0 25%;
 	width: 50%;
+}
+
+#editor
+{
+    display: none;
+    position: absolute;
+    z-index:999999;
+    outline: none;
+    border:none;
+}
+input[type="text"] {
+    width: 200px;
 }

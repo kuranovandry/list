@@ -1,0 +1,7 @@
+tr id="user_#{user.id}"
+	= form_for @user, url: user_path(@user), method: :put do |f|
+		td = f.text_field :email
+		td = f.text_field :first_name
+		td = f.text_field :last_name
+		td = f.text_field :title
+		td = f.submit class: "btn"

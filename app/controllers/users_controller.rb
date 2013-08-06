@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 	before_filter :find_user, only: [:update, :destroy, :edit, :show]
-  skip_before_filter :login?, only: [:new, :create, :update]
+  skip_before_filter :login?
 
 	def index
   	@users = User.all
@@ -24,20 +24,31 @@ class UsersController < ApplicationController
   	redirect_to users_path
   end
 
-  def show
-  	
+  def update
+    respond_to do |format|
+    	format.html do 
+        if @user.update_attributes(params[:user])
+    		  redirect_to categories_path
+        else
+          render :edit
+      	end
+      end
+      format.js do
+        if @user.update_attributes(params[:user])
+          render :update, layout: false
+        else
+          render :create, layout: false
+        end
+      
+      end
+    end
   end
 
   def edit
-  	
-  end
-
-  def update
-  	if @user.update_attributes(params[:user])
-  		redirect_to categories_path
-  	else
-  		render :edit
-  	end
+    respond_to do |format|
+      format.js { render :create, layout: false }
+      format.html
+    end
   end
 
   private
