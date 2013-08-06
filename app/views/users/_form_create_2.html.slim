@@ -1,7 +1,7 @@
 tr id="user_#{user.id}"
-	= form_for @user, remote: true, method: :put do |f|
-		td = f.text_field :email
-		td = f.text_field :first_name
-		td = f.text_field :last_name
-		td = f.text_field :title
-		td = f.submit class: "btn"
+	= form_for @user, remote: true, html: { method: :put } do |f|
+		td = f.text_field :email, form: "edit_user_#{user.id}"
+		td = f.text_field :first_name, form: "edit_user_#{user.id}"
+		td = f.text_field :last_name, form: "edit_user_#{user.id}"
+		td = f.text_field :title, form: "edit_user_#{user.id}"
+		td = f.submit class: "btn", form: "edit_user_#{user.id}"
