@@ -30,11 +30,21 @@ javascript:
 	        $(this).hide();
 	        $(gCurCell).html($(this).val());
 
+	        var id = $(gCurCell).parent().data('id')
+	        
 	        $.ajax({
-	        	url: "users/"
-	        	//type: "PUT",
-	        	//data: 
+	        	url: "/users/" + id,
+	        	data: {user:{
+	        		first_name: "name",
+	        		last_name: "name",
+	        		email: "email",
+	        		title: "title",
+	        	}},
+	        	type: "PUT",
+	        	success: function() { 
+	        		$('.editable_table tbody').empty();
+	        		$("#{ j(render partial: 'form_tr') }").appendTo('tbody');
+	        	}
 	        });
-
 	    });
 	});

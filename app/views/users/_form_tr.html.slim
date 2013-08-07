@@ -1,10 +1,9 @@
 - @users.each do |user|
-	tr id="user_#{user.id}"
-		td = user.email
-		td = user.first_name
-		td = user.last_name
-		td = user.title
+	tr id="user_#{user.id}" data-id="#{user.id}"
+		td#email = user.email
+		td#first_name = user.first_name
+		td#last_name = user.last_name
+		td#title = user.title
 		th 
-			<!- = link_to "Edit", edit_user_path(user.id), remote: true, class: "btn" ->
 			= link_to "del", user_path(user.id), class: "btn", method: :delete
 			= link_to "categories", categories_path, class: "btn"
