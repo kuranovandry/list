@@ -39,7 +39,6 @@ class UsersController < ApplicationController
         else
           render :create, layout: false
         end
-      
       end
     end
   end
