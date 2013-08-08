@@ -16,7 +16,7 @@ javascript:
 	var gCurCell;
 	
 	$(document).ready(function(){
-	    $('.editable_table td').click(function(){
+	    $('body').on('click', '.editable_table td', function(){
 	        gCurCell = this;
 	        var lPos = $(this).position();
 	        $('#editor').css({
@@ -31,20 +31,22 @@ javascript:
 	        $(gCurCell).html($(this).val());
 
 	        var id = $(gCurCell).parent().data('id')
-	        
+	        var tr = $(gCurCell).parent();
+	        var fn = $(tr).find('#first_name').text();
+	        var ln = $(tr).find('#last_name').text();
+	        var em = $(tr).find('#email').text();
+	        var tt = $(tr).find('#title').text();
+
 	        $.ajax({
 	        	url: "/users/" + id,
-	        	data: {user:{
-	        		first_name: "name",
-	        		last_name: "name",
-	        		email: "email",
-	        		title: "title",
+	        	data: { id: id, user:{
+	        		first_name: fn,
+	        		last_name: ln,
+	        		email: em,
+	        		title: tt,
 	        	}},
-	        	type: "PUT",
-	        	success: function() { 
-	        		$('.editable_table tbody').empty();
-	        		$("#{ j(render partial: 'form_tr') }").appendTo('tbody');
-	        	}
+	        	type: "PUT"
 	        });
+
 	    });
 	});

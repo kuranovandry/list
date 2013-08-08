@@ -25,14 +25,13 @@ class UsersController < ApplicationController
   end
 
   def update
-    #binding.pry
     respond_to do |format|
       format.js do
         if @user.update_attributes(params[:user])
-          @users = User.all
           render :update, layout: false
         else
-          render :create, layout: false
+          @user = User.find_by_id(params[:id])
+          render :update, layout: false
         end
       end
     	format.html do 
